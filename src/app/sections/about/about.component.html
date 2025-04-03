@@ -1,0 +1,50 @@
+<section id="about" class="py-5">
+  <div class="row mb-5 p-3">
+    <div class="col-md-6 text-center col-12">
+      <img [src]="userDetails.profileImage" [alt]="userDetails.name" class="img-fluid rounded-circle" style="width: 400px; height: 400px; object-fit: cover;" height="4032" width="3024">
+    </div>
+
+    <div class="col-md-6 d-flex flex-column justify-content-center col-12">
+      <h1 class="color-light font-outfit">{{ userDetails.name }}</h1>
+      <p class="color-light fw-light">{{userDetails.bio}}</p>
+      <button id="contact-btn"
+              [@buttonHover]="buttonState"
+              (mouseenter)="onMouseEnter()"
+              (mouseleave)="onMouseLeave()"
+              class="btn btn-lg fw-light accent-background px-3 py-2 font-outfit"
+              style="max-width: 150px;">
+        Contact Me
+      </button>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-center align-items-center accent-color mb-5" id="links-container">
+    <div class="col d-flex justify-content-center">
+      <a href="https://www.linkedin.com/in/angela-krstevska-672a93225/" target="_blank" class="mx-3 text-decoration-none accent-color">
+        <svg width="60" height="61" viewBox="0 0 70 71" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M34.9999 0C15.6699 0 0 15.8938 0 35.5C0 55.1062 15.6699 71 34.9999 71C54.33 71 70 55.1062 70 35.5C69.9999 15.8938 54.3297 0 34.9999 0ZM25.6619 52.6626H17.9773V27.4812H25.6619V52.6626ZM21.783 24.1835C19.2733 24.1835 17.2387 22.103 17.2387 19.5371C17.2387 16.9708 19.2735 14.8905 21.783 14.8905C24.2924 14.8905 26.3269 16.9708 26.3269 19.5371C26.3271 22.1032 24.2925 24.1835 21.783 24.1835ZM54.4599 52.6626H46.8125V39.4445C46.8125 35.8191 45.4549 33.7954 42.6286 33.7954C39.5526 33.7954 37.9457 35.9031 37.9457 39.4445V52.6626H30.5753V27.4812H37.9457V30.8727C37.9457 30.8727 40.1627 26.7131 45.427 26.7131C50.6915 26.7131 54.46 29.9734 54.46 36.7181L54.4599 52.6626Z" fill="#D392C3"/>
+        </svg>
+      </a>
+    </div>
+
+    <div class="col d-flex justify-content-center">
+      <a href="https://github.com/akrstevska" target="_blank" class="mx-3 text-decoration-none accent-color">
+        <i class="bi bi-github"></i>
+      </a>
+    </div>
+    <div class="col d-flex justify-content-center">
+      <a href="https://www.instagram.com/krstevskangelaa/" target="_blank" class="mx-3 text-decoration-none accent-color">
+        <i class="bi bi-instagram"></i>
+      </a>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <div class="col-8 text-center">
+      <h2 class="color-light font-outfit mb-4 animated-heading">About Me</h2>
+      <p class="color-secondary custom-lh">{{userDetails.description}}</p>
+
+    </div>
+  </div>
+  <div class="row custom-border mt-5">
+  </div>
+
+</section>

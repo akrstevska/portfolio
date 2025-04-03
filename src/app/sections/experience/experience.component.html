@@ -1,0 +1,15 @@
+<section id="experience" class="py-5">
+  <h2 class="color-light font-outfit mb-4 animated-heading">Experience</h2>
+
+  <div class="experience-container">
+    <div *ngFor="let exp of userDetails.experiences; let i = index" class="experience-card-container">
+      <div class="experience-card">
+        <span class="accent-badge ">{{ exp.year }}</span>
+        <h3 class="font-outfit">{{ exp.title }}</h3>
+        <p>{{ exp.company }}</p>
+      </div>
+      <div *ngIf="i < userDetails.experiences.length - 1" class="connection-line"></div>
+    </div>
+  </div>
+
+</section>

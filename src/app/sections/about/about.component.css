@@ -1,0 +1,18 @@
+h1{
+  text-transform: uppercase;
+}
+#contact-btn{
+  font-family: 'Outfit', sans-serif!important;
+
+}
+#links-container{
+  height: 106px;
+  background: #1B1B1B;
+  border-radius: 16px;
+  font-size: 60px;
+}
+#links-container a{
+  color: #FAFAFA;
+}
+
+

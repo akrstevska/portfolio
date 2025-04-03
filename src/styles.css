@@ -1,0 +1,91 @@
+body {
+  font-family: 'Roboto', sans-serif !important;
+  background-color: #121212;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Roboto', sans-serif;
+}
+
+section {
+  min-height: 100vh;
+  padding-top: 80px;
+}
+.nav-link{
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif!important;
+
+}
+.mail-link{
+  font-size: 14px !important;
+}
+.accent-color{
+  color: #D292C3 !important;
+}
+.accent-background{
+  background-color: #D292C3 !important;
+
+}
+.header-light {
+  position: absolute;
+  width: 500px;
+  height: 690px;
+  left: 50%;
+  top: -590px;
+  transform: translateX(-50%);
+  background: #D392C3;
+  filter: blur(250px);
+  z-index: -1000;
+}
+.color-light{
+  color: #FAFAFA;
+}
+.font-outfit{
+  font-family: 'Outfit', sans-serif!important;
+}
+.color-secondary{
+  color: #8A8A8A;
+}
+.secondary-background{
+  background-color: #212121;
+}
+
+.custom-lh{
+  line-height: 35px;
+}
+.custom-border{
+  border-bottom: 1px solid #D392C3;
+}
+.animated-heading {
+  position: relative;
+  display: inline-block;
+}
+
+.animated-heading::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 38%;
+  background-color: #d392c3;
+  z-index: -1;
+  transition: height 0.3s ease-in-out;
+  border-radius: 2px;
+}
+
+.animated-heading:hover::before {
+  height: 55%;
+}
+.accent-badge{
+  font-size: 16px;
+  color: #D392C3;
+  font-weight: 500;
+  padding: 5px 15px;
+  border-radius: 20px;
+  background: rgba(211, 146, 195, 0.1);
+  transition: all 0.3s ease;
+}
+
+

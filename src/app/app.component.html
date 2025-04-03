@@ -1,0 +1,44 @@
+<div class="header-light"></div>
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+  <div class="container-fluid px-5">
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav w-25 d-flex justify-content-between">
+        <li class="nav-item">
+          <a class="nav-link" [class.underlined]="isActive('about')" (click)="scrollToSection('about')">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [class.underlined]="isActive('experience')" (click)="scrollToSection('experience')">Experience</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [class.underlined]="isActive('tech-stack')" (click)="scrollToSection('tech-stack')">Tech</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [class.underlined]="isActive('education')" (click)="scrollToSection('education')">Education</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [class.underlined]="isActive('projects')" (click)="scrollToSection('projects')">Projects</a>
+        </li>
+      </ul>
+      <div class="ms-auto mail-link fw-bold">
+        <a href="mailto:krstevska.angela23@gmail.com" class="nav-link text-white">
+          <i class="bi bi-envelope-fill accent-color"></i> krstevska.angela23&#64;gmail.com
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container mt-5 pt-5">
+  <app-about>about></app-about>
+
+  <app-experience>experience></app-experience>
+  <app-tech-stack>tech-stack</app-tech-stack>
+  <app-education></app-education>
+  <app-projects>projects></app-projects>
+
+
+</div>
+<footer class="accent-background p-3 text-center text-muted fw-light">
+<p class="m-0">&copy; {{ currentYear }} Angela Krstevska. All rights reserved.</p>
+</footer>

@@ -1,0 +1,22 @@
+<div id="education" class="py-5 mb-5">
+  <h2 class="color-light font-outfit mb-5 animated-heading">Education</h2>
+
+  <div class="container">
+    <div *ngFor="let edu of userDetails.education" class="row mb-5 custom-border">
+      <div class="col-md-6">
+        <div class="education-left">
+          <span class="accent-badge">{{ edu.year }}</span>
+          <h3 class="degree mt-3 font-outfit">{{ edu.degree }}</h3>
+          <p class="institution">{{ edu.institution }}</p>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="education-right">
+          <p class="field-of-study">{{ edu.field }}</p>
+          <p class="gpa" *ngIf="edu.gpa">GPA: {{ edu.gpa }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

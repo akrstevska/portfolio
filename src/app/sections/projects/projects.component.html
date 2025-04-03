@@ -1,0 +1,22 @@
+<section id="projects" class="">
+  <h2 class="color-light font-outfit mb-4 animated-heading mb-5">Projects</h2>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <a *ngFor="let project of userDetails.projects" [href]="project.link" target="_blank" class="text-decoration-none">
+      <div class="col">
+        <div class="card project-card secondary-background">
+          <img class="card-img-top" [src]="project.thumbnail" alt="Project Thumbnail">
+          <div class="card-body">
+            <h3 class="card-text color-light font-outfit">{{ project.name }}</h3>
+            <p class="card-text color-secondary ">{{ project.description }}</p>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="text-center mt-3">
+    <a href="https://github.com/akrstevska" target="_blank" class="text-decoration-none accent-color">
+      See more...
+    </a>
+  </div>
+</section>

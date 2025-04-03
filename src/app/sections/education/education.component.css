@@ -1,0 +1,36 @@
+.education-left {
+  text-align: left;
+}
+
+.education-right {
+  text-align: right;
+}
+
+.degree {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.institution {
+  font-size: 18px;
+  color: #b0b0b0;
+}
+
+.field-of-study {
+  font-size: 16px;
+  color: #d0d0d0;
+  font-style: italic;
+}
+
+.gpa {
+  font-size: 14px;
+  color: #D392C3;
+  margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+  .education-left, .education-right {
+    text-align: center;
+  }
+}
