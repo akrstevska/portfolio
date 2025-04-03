@@ -17,6 +17,17 @@ export class AppComponent {
   currentYear = new Date().getFullYear();
   scrollToSection(sectionId: string) {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    this.closeNavbar();
+  }
+
+  closeNavbar() {
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.getElementById('navbarContent');
+
+    if (navbarToggler && navbarCollapse) {
+      navbarToggler.classList.remove('collapsed');
+      navbarCollapse.classList.remove('show');
+    }
   }
 
   isActive(sectionId: string): boolean {

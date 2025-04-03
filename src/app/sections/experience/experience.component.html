@@ -1,15 +1,18 @@
 <section id="experience" class="py-5">
-  <h2 class="color-light font-outfit mb-4 animated-heading">Experience</h2>
+    <h2 class="color-light font-outfit mb-4 animated-heading">Experience</h2>
 
-  <div class="experience-container">
-    <div *ngFor="let exp of userDetails.experiences; let i = index" class="experience-card-container">
-      <div class="experience-card">
-        <span class="accent-badge ">{{ exp.year }}</span>
-        <h3 class="font-outfit">{{ exp.title }}</h3>
-        <p>{{ exp.company }}</p>
-      </div>
-      <div *ngIf="i < userDetails.experiences.length - 1" class="connection-line"></div>
+    <div class="experience-container">
+        <div *ngFor="let exp of userDetails.experiences; let i = index" class="experience-card-container">
+            <div class="experience-card">
+                <span class="accent-badge">{{ exp.year }}</span>
+                <h3 class="font-outfit">{{ exp.title }}</h3>
+                <p>{{ exp.company }}</p>
+                <p class="tech-badge mt-3">{{ exp.technologies }}</p>
+                <ul class="achievements-list mt-2">
+                    <li *ngFor="let achievement of exp.achievements">{{ achievement }}</li>
+                </ul>
+            </div>
+            <div *ngIf="i < userDetails.experiences.length - 1" class="connection-line"></div>
+        </div>
     </div>
-  </div>
-
 </section>

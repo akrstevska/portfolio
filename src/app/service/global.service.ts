@@ -6,33 +6,61 @@ import { Injectable } from '@angular/core';
 export class GlobalService {
   userDetails = {
     name: 'Angela Krstevska',
-    bio: "Some bio",
+    bio1: "💻 Software engineering student passionate about AI, Laravel, and Vue.js, always eager to learn and solve complex problems.",
+    bio2: "🎓 Third-year Computer Software Engineering student exploring Large Language Models and RAG, with plans for a master’s in AI & Data Science.",
     email: 'krstevska.angela23@gmail.com',
     profileImage: 'assets/angela.JPG',
-    description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).',
+    description: 'I am a dedicated software engineering student with a strong passion for AI and full-stack development. Proficient in Laravel, Vue.js, Java, and Spring Boot, I enjoy building innovative solutions and tackling complex challenges. Currently in my third year of Computer Software Engineering, I am exploring Large Language Models and Retrieval-Augmented Generation (RAG) as part of my capstone project. I thrive in collaborative environments and continuously seek opportunities to expand my skills. My goal is to pursue a master’s in AI & Data Science and contribute to cutting-edge projects that drive meaningful technological advancements.',
     experiences: [
-      { title: 'Frontend Developer', company: 'ABC Tech', year: '2021 - Present' },
-      { title: 'UI/UX Designer', company: 'XYZ Studios', year: '2019 - 2021' },
-      { title: 'Web Developer Intern', company: 'StartUp Hub', year: '2018 - 2019' }
+      {
+        title: 'Software Engineer Intern',
+        company: 'Aztech - Skopje, Macedonia',
+        year: 'June 2024 - September 2024',
+        technologies: 'PHP, Laravel, Vue,js',
+        achievements: [
+          'Worked on an optical network management system managing routers, users, OLTs, and network configurations',
+          'Developed backend functionalities for provisioning, monitoring, and troubleshooting network devices'
+        ]
+      },
+      {
+        title: 'Software Engineer Intern',
+        company: 'Digimak - Strumica, Macedonia',
+        year: 'June 2023 - September 2023',
+        technologies: 'Vue.js, Laravel',
+        achievements: [
+          'Enhanced a football admin dashboard by developing a match simulator',
+          'Implemented real-time event tracking and match period management for accurate simulations'
+        ]
+      },
+      {
+        title: 'Software Engineer Intern',
+        company: 'Digimak - Strumica, Macedonia',
+        year: 'June 2022 - September 2022',
+        technologies: 'HTML, CSS, JavaScript',
+        achievements: [
+          'Developed a Chrome extension for football fans to follow their favorite club and team',
+          'Created features for real-time updates and news used by sports teams for fan engagement'
+        ]
+      }
     ],
     projects: [
       {
         name: 'Edu-Dashboard',
-        description: 'This is the description of Project One. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distrib',
+        description: 'EduDashboard is an intuitive and customizable web application designed to manage and visualize educational data. It features a dynamic dashboard with widgets that users can customize according to their preferences. These widgets allow you to control what information is displayed, adjust the layout, and choose the widget sizes.',
         link: 'https://akrstevska.github.io/edu-dashboard/dashboard',
         thumbnail: 'assets/thumbnails/edu-dashboard.png'
       },
       {
-        name: 'Project Two',
-        description: 'This is the description of Project Two.',
-        link: 'https://link-to-project2.com',
-        thumbnail: 'assets/thumbnails/edu-dashboard.png'
+        name: 'Edu-Dashboard API',
+        description: 'This API enables seamless management and interaction with an online course platform, providing comprehensive tools for handling various educational activities. It allows instructors and students to efficiently manage courses, lessons, enrollments, progress tracking, forums, and assessments.',
+        link: 'https://documenter.getpostman.com/view/19662009/2sB2cSi4WZ',
+        thumbnail: 'assets/thumbnails/api.png'
       },
       {
-        name: 'Project Three',
-        description: 'This is the description of Project Three.',
-        link: 'https://link-to-project3.com',
-        thumbnail: 'assets/thumbnails/edu-dashboard.png'
+        name: 'Theater Management System',
+        description: 'The system allows users to easily book theater seats, view available shows, and reserve tickets in real-time using an interactive seating map. Admins can manage show details, review reservations, and approve them through a dedicated admin panel. The backend and frontend are both hosted on Azure for reliable performance and availability.',
+        link: 'https://github.com/akrstevska/theater-seatbooking',
+        thumbnail: 'assets/thumbnails/theater.png'
       }
     ],
     frontendTech: [

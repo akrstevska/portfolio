@@ -36,8 +36,9 @@ section {
   transform: translateX(-50%);
   background: #D392C3;
   filter: blur(250px);
-  z-index: -1000;
+  z-index: -1;
 }
+
 .color-light{
   color: #FAFAFA;
 }

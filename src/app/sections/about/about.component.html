@@ -1,20 +1,23 @@
 <section id="about" class="py-5">
   <div class="row mb-5 p-3">
     <div class="col-md-6 text-center col-12">
-      <img [src]="userDetails.profileImage" [alt]="userDetails.name" class="img-fluid rounded-circle" style="width: 400px; height: 400px; object-fit: cover;" height="4032" width="3024">
+      <img [src]="userDetails.profileImage" [alt]="userDetails.name" class="img-fluid rounded-circle mb-4" style="width: 400px; height: 400px; object-fit: cover;" height="4032" width="3024">
     </div>
 
     <div class="col-md-6 d-flex flex-column justify-content-center col-12">
       <h1 class="color-light font-outfit">{{ userDetails.name }}</h1>
-      <p class="color-light fw-light">{{userDetails.bio}}</p>
-      <button id="contact-btn"
-              [@buttonHover]="buttonState"
-              (mouseenter)="onMouseEnter()"
-              (mouseleave)="onMouseLeave()"
-              class="btn btn-lg fw-light accent-background px-3 py-2 font-outfit"
-              style="max-width: 150px;">
-        Contact Me
-      </button>
+      <p class="color-light fw-light">{{userDetails.bio1}}</p>
+        <p class="color-light fw-light">{{userDetails.bio2}}</p>
+
+        <button id="contact-btn"
+                [@buttonHover]="buttonState"
+                (mouseenter)="onMouseEnter()"
+                (mouseleave)="onMouseLeave()"
+                (click)="contactMe()"
+                class="btn btn-lg fw-light accent-background px-3 py-2 font-outfit"
+                style="max-width: 150px;">
+            Contact Me
+        </button>
     </div>
   </div>
   <div class="row d-flex justify-content-center align-items-center accent-color mb-5" id="links-container">

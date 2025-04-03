@@ -139,3 +139,41 @@
     padding: 20px;
   }
 }
+.tech-badge {
+  background: rgba(211, 146, 195, 0.15);
+  color: #D392C3;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  display: inline-block;
+  margin-top: 5px;
+  transition: all 0.3s ease;
+}
+
+.achievements-list {
+  text-align: center;
+  padding-left: 0;
+  margin-top: 12px;
+  list-style-type: none;
+}
+
+.achievements-list li {
+  position: relative;
+  margin-bottom: 8px;
+  color: #b0b0b0;
+  font-size: 16px;
+  line-height: 1.4;
+  padding: 0 10px;
+}
+
+.achievements-list li::before {
+  content: "•";
+  color: #D392C3;
+  margin-right: 8px;
+}
+
+.experience-card-container:hover .tech-badge {
+  background: rgba(211, 146, 195, 0.25);
+  transform: translateY(-2px);
+}

@@ -2,3 +2,74 @@
   /*text-decoration: underline;*/
   color: #D392C3;
 }
+
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+
+  .navbar-nav {
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .nav-item {
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .mail-link {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+
+
+@media (max-width: 767px) {
+  #about .col-md-6.text-center img {
+    width: 250px !important;
+    height: 250px !important;
+    margin-bottom: 30px;
+  }
+
+  .container {
+    overflow-x: hidden;
+  }
+
+  body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
+
+  .email-text {
+    font-size: 14px;
+  }
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+.container-fluid {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (max-width: 576px) {
+  #links-container {
+    height: auto;
+    padding: 15px 0;
+  }
+
+  #links-container .col {
+    margin-bottom: 15px;
+  }
+}

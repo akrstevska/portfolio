@@ -37,4 +37,7 @@ export class AboutComponent {
   constructor(private globalService: GlobalService) {
     this.userDetails = this.globalService.userDetails;
   }
+  contactMe() {
+    window.location.href = "mailto:krstevska.angela23@gmail.com?subject=Portfolio Inquiry";
+  }
 }
