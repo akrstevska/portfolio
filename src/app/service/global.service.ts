@@ -81,7 +81,7 @@ export class GlobalService {
     toolsTech:[
       { name: 'Git', icon: 'assets/tech-icons/git.svg' },
       { name: 'GitHub', icon: 'assets/tech-icons/github.svg' },
-      { name: 'VS Code', icon: 'assets/tech-icons/vs-code.svg' },
+      { name: 'Docker', icon: 'assets/tech-icons/docker.svg' },
       { name: 'Figma', icon: 'assets/tech-icons/figma.svg' },
     ],
     education:[
@@ -99,7 +99,7 @@ export class GlobalService {
         degree: 'High School',
         institution: 'Jane Sandanski, Strumica',
         field: 'Science and Math Program',
-        gpa: '3.91',
+        gpa: '4.0',
         details: true
 
       },

@@ -8,7 +8,7 @@
       <h1 class="color-light font-outfit">{{ userDetails.name }}</h1>
       <p class="color-light fw-light">{{userDetails.bio1}}</p>
         <p class="color-light fw-light">{{userDetails.bio2}}</p>
-
+        <div class="d-flex justify-content-start gap-3 w-75">
         <button id="contact-btn"
                 [@buttonHover]="buttonState"
                 (mouseenter)="onMouseEnter()"
@@ -18,6 +18,13 @@
                 style="max-width: 150px;">
             Contact Me
         </button>
+                <a href="assets/CV-Angela%20Krstevska.pdf" download="Angela_Krstevska_CV.pdf" class="fancy-button px-3 py-2 font-outfit fw-light">
+                    <span class="fancy-button-text">Download CV</span>
+
+                </a>
+
+        </div>
+
     </div>
   </div>
   <div class="row d-flex justify-content-center align-items-center accent-color mb-5" id="links-container">

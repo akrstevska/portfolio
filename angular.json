@@ -31,7 +31,6 @@
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
             ],
-            "baseHref": "/portfolio/"
           },
           "configurations": {
             "production": {
@@ -93,7 +92,7 @@
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
-            ],
+            ]
           }
         },
         "deploy": {
