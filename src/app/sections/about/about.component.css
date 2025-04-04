@@ -14,5 +14,17 @@ h1{
 #links-container a{
   color: #FAFAFA;
 }
+.profile-img {
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+@media (max-width: 767px) {
+  .profile-img {
+    max-width: 250px;
+  }
+}
 
 
