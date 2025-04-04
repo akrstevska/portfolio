@@ -1,59 +1,31 @@
-# Portfolio
+# Personal Portfolio Website
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.2.
+Welcome to my personal portfolio repository! This repository contains the code for my personal portfolio website, where you can learn more about my background, skills, and projects. 
 
-## Development server
+Check out my live portfolio website here: [My Portfolio](https://akrstevska.github.io/portfolio/)
 
-To start a local development server, run:
+## About Me
 
-```bash
-ng serve
-```
+I am a third-year Computer Software Engineering student with a strong focus on AI and software development. Through internships and projects, I have gained hands-on experience in various fields, including match simulation, optical network management systems, and more.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+On this website, you’ll find information about my academic journey, technical skills, and some of the projects I’ve worked on. I'm passionate about AI, data science, and software development and always looking for new opportunities to learn and grow.
 
-## Code scaffolding
+## Technologies Used
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- HTML, CSS
+- Bootstrap
+- Angular (For interactive elements)
+- GitHub Pages (For hosting)
 
-```bash
-ng generate component component-name
-```
+## Features
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- **Interactive Design**: Smooth navigation between sections with animations.
+- **Responsive**: Fully responsive, works seamlessly on mobile, tablet, and desktop devices.
+- **Capstone Project**: Learn about my current work in AI, exploring LLMs and RAG for my capstone project.
 
-```bash
-ng generate --help
-```
+Feel free to explore and reach out to me for any collaboration or inquiries!
 
-## Building
+## License
 
-To build the project run:
+This project is open-source and available under the MIT License.
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
