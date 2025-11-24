@@ -6,10 +6,17 @@
   height: 360px;
 }
 
+.card-image-container {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
 .project-card .card-img-top {
   height: 220px;
+  width: 100%;
   object-fit: cover;
-  transition: all 0.4s ease;
+  transition: opacity 0.4s ease;
 }
 
 .project-card .card-body {
@@ -45,8 +52,68 @@
   box-shadow: 0 10px 20px rgba(211, 146, 195, 0.2);
 }
 
-.project-card.has-long-description:hover .card-img-top {
-  height: 160px;
+/* Tech overlay that appears on hover */
+.tech-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(33, 33, 33, 0.98), rgba(42, 32, 37, 0.98));
+  border: 1px solid rgba(211, 146, 195, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 2;
+}
+
+.tech-overlay-content {
+  text-align: center;
+  padding: 20px;
+}
+
+.tech-title {
+  color: #D392C3;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-family: 'Outfit', sans-serif;
+}
+
+.tech-grid-display {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.tech-item {
+  background: rgba(211, 146, 195, 0.15);
+  color: #D392C3;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid rgba(211, 146, 195, 0.3);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.tech-item:hover {
+  background: rgba(211, 146, 195, 0.25);
+  border-color: rgba(211, 146, 195, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Hover state - show tech overlay, hide image */
+.project-card:hover .card-img-top {
+  opacity: 0;
+}
+
+.project-card:hover .tech-overlay {
+  opacity: 1;
 }
 
 .project-card.has-long-description:hover .card-body {

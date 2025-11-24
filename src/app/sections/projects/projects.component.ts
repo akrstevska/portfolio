@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import {NgForOf} from "@angular/common";
+import {NgForOf, NgIf} from "@angular/common";
 import {GlobalService} from '../../service/global.service';
 
 @Component({
   selector: 'app-projects',
     imports: [
         NgForOf,
-
+        NgIf
     ],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css'

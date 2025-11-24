@@ -3,6 +3,8 @@
   flex-direction: column;
   align-items: center;
   position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .experience-container::before {
@@ -19,25 +21,60 @@
 
 .experience-card-container {
   position: relative;
-  margin-bottom: 70px;
+  margin-bottom: 50px;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  padding-right: calc(50% + 40px);
+}
+
+.experience-card-container:nth-child(even) {
+  justify-content: flex-start;
+  padding-right: 0;
+  padding-left: calc(50% + 40px);
 }
 
 .experience-card {
   background: #212121;
   box-shadow: 2px 4px 7px #000000;
   border-radius: 12px;
-  padding: 25px;
-  width: 600px;
+  padding: 20px;
+  width: 450px;
   text-align: center;
   position: relative;
   z-index: 2;
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation: slideInLeft 0.6s ease-out;
 }
 
+.experience-card-container:nth-child(even) .experience-card {
+  animation: slideInRight 0.6s ease-out;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Connection dot on timeline */
 .experience-card::before {
   content: '';
   position: absolute;
@@ -45,12 +82,57 @@
   height: 20px;
   background: #D392C3;
   border-radius: 50%;
-  left: 50%;
-  bottom: -40px;
-  transform: translateX(-50%);
+  right: -50px;
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 3;
   box-shadow: 0 0 0 4px rgba(211, 146, 195, 0.3);
   transition: all 0.4s ease;
+}
+
+/* Solid connector line from timeline to card - RIGHT SIDE CARDS */
+.experience-card-container::before {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 2px;
+  right: calc(50% - 2px);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  border-radius: 2px;
+  background: linear-gradient(to left, rgba(211, 146, 195, 0.9), rgba(211, 146, 195, 0.4));
+  box-shadow: 0 0 8px rgba(211, 146, 195, 0.5);
+  transition: all 0.3s ease;
+}
+
+/* LEFT SIDE CARDS - mirror the connector */
+.experience-card-container:nth-child(even)::before {
+  right: auto;
+  left: calc(50% - 2px);
+  background: linear-gradient(to right, rgba(211, 146, 195, 0.9), rgba(211, 146, 195, 0.4));
+}
+
+/* Center the first card (Junior position) */
+.experience-card-container:first-child {
+  justify-content: center;
+  padding-right: 0;
+}
+
+.experience-card-container:first-child::before {
+  display: none;
+}
+
+/* Removed dash animations - using solid connectors now */
+
+.experience-card-container:nth-child(even) .experience-card::before {
+  right: auto;
+  left: -50px;
+}
+
+/* Hide connector dot for centered first card */
+.experience-card-container:first-child .experience-card::before {
+  display: none;
 }
 
 .experience-card span {
@@ -60,7 +142,7 @@
 }
 
 .experience-card h3 {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   color: #fff;
   margin-bottom: 8px;
@@ -68,7 +150,7 @@
 }
 
 .experience-card p {
-  font-size: 18px;
+  font-size: 16px;
   color: #b0b0b0;
   transition: all 0.3s ease;
 }
@@ -85,6 +167,7 @@
   background: linear-gradient(135deg, transparent, transparent, transparent, #D392C3) border-box;
   -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: destination-out;
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
   opacity: 0;
   transition: all 0.4s ease;
@@ -100,8 +183,15 @@
 }
 
 .experience-card-container:hover .experience-card::before {
-  transform: translateX(-50%) scale(1.3);
+  transform: translateY(-50%) scale(1.3);
   box-shadow: 0 0 0 6px rgba(211, 146, 195, 0.2), 0 0 20px rgba(211, 146, 195, 0.4);
+}
+
+/* Hover effect on connector line */
+.experience-card-container:hover::before {
+  height: 3px;
+  box-shadow: 0 0 15px rgba(211, 146, 195, 0.8);
+  background: rgba(211, 146, 195, 1);
 }
 
 .experience-card-container:hover .experience-card span {
@@ -117,26 +207,53 @@
   display: none;
 }
 
-.experience-card-container:last-child .experience-card::before {
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(211, 146, 195, 0.7);
-  }
-  70% {
-    box-shadow: 0 0 0 10px rgba(211, 146, 195, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(211, 146, 195, 0);
-  }
-}
+/* Removed old last-child animation - replaced with junior-specific one below */
 
 @media (max-width: 768px) {
+  .experience-card-container {
+    justify-content: center !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    margin-bottom: 70px;
+  }
+  
   .experience-card {
     width: 90%;
     padding: 20px;
+  }
+  
+  .experience-card::before {
+    right: auto !important;
+    left: 50% !important;
+    top: auto !important;
+    bottom: -40px !important;
+    transform: translateX(-50%) !important;
+  }
+  
+  .experience-card-container:hover .experience-card::before {
+    transform: translateX(-50%) scale(1.3) !important;
+  }
+  
+  .junior-card {
+    transform: scale(1);
+  }
+  
+  .intern-card {
+    width: 90%;
+    transform: scale(1);
+  }
+  
+  .experience-card-container:hover .junior-card {
+    transform: translateY(-8px) scale(1);
+  }
+  
+  .experience-card-container:first-child::after {
+    width: 6px;
+    height: 70px;
+    top: auto;
+    bottom: -75px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 .tech-badge {
@@ -160,9 +277,9 @@
 
 .achievements-list li {
   position: relative;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   color: #b0b0b0;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.4;
   padding: 0 10px;
 }
@@ -176,4 +293,198 @@
 .experience-card-container:hover .tech-badge {
   background: rgba(211, 146, 195, 0.25);
   transform: translateY(-2px);
+}
+
+/* Junior Card Styles - Enhanced with theme colors */
+.junior-card {
+  border: 1px solid rgba(211, 146, 195, 0.3);
+  background: linear-gradient(135deg, #252025 0%, #212121 50%, #252025 100%);
+  box-shadow: 0 4px 12px rgba(211, 146, 195, 0.15);
+  width: 500px;
+  animation: slideInJunior 0.8s ease-out !important;
+}
+
+@keyframes slideInJunior {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.junior-card::before {
+  background: linear-gradient(135deg, #D392C3, #b366a0);
+  box-shadow: 0 0 0 4px rgba(211, 146, 195, 0.3);
+  width: 20px;
+  height: 20px;
+}
+
+.experience-card-container:nth-child(even) .junior-card::before {
+  right: auto;
+  left: -50px;
+}
+
+.junior-card::after {
+  opacity: 0.3;
+}
+
+.experience-card-container:hover .junior-card {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(211, 146, 195, 0.3);
+}
+
+.experience-card-container:hover .junior-card::before {
+  box-shadow: 0 0 0 6px rgba(211, 146, 195, 0.2), 0 0 20px rgba(211, 146, 195, 0.4);
+}
+
+.experience-card-container:hover .junior-card h3 {
+  color: #D392C3;
+  text-shadow: 0 0 10px rgba(211, 146, 195, 0.3);
+}
+
+.junior-card .tech-badge {
+  background: rgba(211, 146, 195, 0.25);
+  color: #D392C3;
+  font-weight: 600;
+}
+
+.junior-card .achievements-list li::before {
+  content: "•";
+  color: #D392C3;
+}
+
+.junior-card .accent-badge {
+  background: rgba(211, 146, 195, 0.25);
+  color: #D392C3;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid rgba(211, 146, 195, 0.3);
+}
+
+/* Intern Card Styles - Smaller and more compact */
+.intern-card {
+  width: 380px;
+  padding: 18px;
+  transform: scale(0.95);
+}
+
+.experience-card-container:nth-child(odd) .intern-card {
+  animation: slideInInternLeft 0.6s ease-out !important;
+}
+
+.experience-card-container:nth-child(even) .intern-card {
+  animation: slideInInternRight 0.6s ease-out !important;
+}
+
+@keyframes slideInInternLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px) scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(0.95);
+  }
+}
+
+@keyframes slideInInternRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px) scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(0.95);
+  }
+}
+
+.intern-card h3 {
+  font-size: 18px;
+}
+
+.intern-card p {
+  font-size: 14px;
+}
+
+.intern-card .achievements-list li {
+  font-size: 13px;
+}
+
+/* Work Type Badge */
+.work-type-badge {
+  background: rgba(211, 146, 195, 0.15);
+  color: #D392C3;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 500;
+  margin-left: 8px;
+  display: inline-block;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(211, 146, 195, 0.2);
+}
+
+/* Special styling for Part-time badge in junior card */
+.junior-card .work-type-badge {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(200, 200, 200, 0.2));
+  color: #e0e0e0;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  padding: 5px 12px;
+  font-size: 12px;
+}
+
+.experience-card-container:hover .junior-card .work-type-badge {
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(220, 220, 220, 0.25));
+  color: #fff;
+}
+
+/* Special connection line from junior (centered) to first internship */
+.experience-card-container:first-child::after {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: calc(100% + 50px);
+  background: linear-gradient(to bottom, rgba(211, 146, 195, 0.8), rgba(211, 146, 195, 0.4));
+  left: 50%;
+  bottom: -50px;
+  transform: translateX(-50%);
+  z-index: 1;
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(211, 146, 195, 0.4);
+  animation: glow-pulse 2s infinite;
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(211, 146, 195, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(211, 146, 195, 0.5);
+  }
+}
+
+/* Pulse animation for junior card */
+.experience-card-container:first-child .junior-card::before {
+  animation: pulse-enhanced 2s infinite;
+}
+
+@keyframes pulse-enhanced {
+  0% {
+    box-shadow: 0 0 0 4px rgba(211, 146, 195, 0.3);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(211, 146, 195, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 4px rgba(211, 146, 195, 0);
+  }
 }

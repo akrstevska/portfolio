@@ -1,5 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { AboutComponent } from './sections/about/about.component';
+import { ChatComponent } from './sections/chat/chat.component';
 import { ExperienceComponent } from './sections/experience/experience.component';
 import { ProjectsComponent } from './sections/projects/projects.component';
 import { TechStackComponent } from './sections/tech-stack/tech-stack.component';
@@ -7,7 +8,7 @@ import { EducationComponent } from './sections/education/education.component';
 
 @Component({
   selector: 'app-root',
-  imports: [ AboutComponent, ExperienceComponent, ProjectsComponent, TechStackComponent, EducationComponent],
+  imports: [ AboutComponent, ChatComponent, ExperienceComponent, ProjectsComponent, TechStackComponent, EducationComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

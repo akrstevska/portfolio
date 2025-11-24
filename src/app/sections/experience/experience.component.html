@@ -3,8 +3,9 @@
 
     <div class="experience-container">
         <div *ngFor="let exp of userDetails.experiences; let i = index" class="experience-card-container">
-            <div class="experience-card">
+            <div class="experience-card" [ngClass]="exp.type === 'junior' ? 'junior-card' : 'intern-card'">
                 <span class="accent-badge">{{ exp.year }}</span>
+                <span *ngIf="exp.workType" class="work-type-badge">{{ exp.workType }}</span>
                 <h3 class="font-outfit">{{ exp.title }}</h3>
                 <p>{{ exp.company }}</p>
                 <p class="tech-badge mt-3">{{ exp.technologies }}</p>

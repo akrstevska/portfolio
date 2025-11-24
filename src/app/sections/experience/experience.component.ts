@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import {GlobalService} from '../../service/global.service';
-import {NgForOf, NgIf} from '@angular/common';
+import {NgForOf, NgIf, NgClass} from '@angular/common';
 
 @Component({
   selector: 'app-experience',
   imports: [
     NgForOf,
-    NgIf
+    NgIf,
+    NgClass
   ],
   templateUrl: './experience.component.html',
   styleUrl: './experience.component.css'

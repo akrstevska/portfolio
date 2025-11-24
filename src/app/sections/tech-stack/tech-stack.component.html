@@ -3,6 +3,17 @@
 
   <div class="tech-container">
     <div class="tech-category">
+      <h3 class="category-title font-outfit">Backend</h3>
+      <div class="tech-grid">
+        <div class="tech-card" *ngFor="let tech of userDetails.backendTech">
+          <div class="tech-icon">
+            <img [src]="tech.icon" [alt]="tech.name">
+          </div>
+          <span class="tech-name">{{tech.name}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="tech-category">
       <h3 class="category-title font-outfit">Frontend</h3>
       <div class="tech-grid">
         <div class="tech-card" *ngFor="let tech of userDetails.frontendTech">
@@ -15,9 +26,9 @@
     </div>
 
     <div class="tech-category">
-      <h3 class="category-title font-outfit">Backend</h3>
+      <h3 class="category-title font-outfit">AI & Data Science</h3>
       <div class="tech-grid">
-        <div class="tech-card" *ngFor="let tech of userDetails.backendTech">
+        <div class="tech-card" *ngFor="let tech of userDetails.aiDataScienceTech">
           <div class="tech-icon">
             <img [src]="tech.icon" [alt]="tech.name">
           </div>
@@ -27,7 +38,7 @@
     </div>
 
     <div class="tech-category">
-      <h3 class="category-title font-outfit">Tools & Others</h3>
+      <h3 class="category-title font-outfit">Tools & DevOps</h3>
       <div class="tech-grid">
         <div class="tech-card" *ngFor="let tech of userDetails.toolsTech">
           <div class="tech-icon">

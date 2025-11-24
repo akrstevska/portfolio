@@ -5,7 +5,17 @@
         <a *ngFor="let project of userDetails.projects" [href]="project.link" target="_blank" class="text-decoration-none">
             <div class="col">
                 <div class="card project-card secondary-background">
-                    <img class="card-img-top" [src]="project.thumbnail" alt="Project Thumbnail">
+                    <div class="card-image-container">
+                        <img class="card-img-top" [src]="project.thumbnail" alt="Project Thumbnail">
+                        <div class="tech-overlay" *ngIf="project.technologies">
+                            <div class="tech-overlay-content">
+                                <h4 class="tech-title">Technologies</h4>
+                                <div class="tech-grid-display">
+                                    <span class="tech-item" *ngFor="let tech of project.technologies">{{ tech }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="card-body">
                         <h3 class="card-text color-light font-outfit">{{ project.name }}</h3>
                         <p class="card-text color-secondary ">{{ project.description }}</p>
