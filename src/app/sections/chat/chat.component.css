@@ -174,9 +174,11 @@
 
   .chat-window {
     width: calc(100vw - 30px);
-    height: calc(100vh - 100px);
-    max-height: 700px;
+    height: auto;
+    max-height: calc(100vh - 120px);
+    min-height: 500px;
     bottom: 80px;
+    top: 60px;
     right: 15px;
     left: 15px;
     margin: 0 auto;
@@ -195,10 +197,25 @@
     font-size: 12px;
   }
   
+  .close-button {
+    width: 36px;
+    height: 36px;
+    background: rgba(211, 146, 195, 0.2);
+    border: 2px solid rgba(211, 146, 195, 0.5);
+    position: relative;
+    z-index: 10;
+  }
+  
+  .close-button svg {
+    width: 18px;
+    height: 18px;
+    fill: #D392C3;
+  }
+  
   .chat-container {
     flex: 1;
     min-height: 400px;
-    max-height: calc(100vh - 200px);
+    max-height: 100%;
   }
   
   .chat-container iframe {
@@ -210,8 +227,10 @@
 @supports (-webkit-touch-callout: none) {
   @media (max-width: 576px) {
     .chat-window {
-      height: calc(100vh - 100px) !important;
-      max-height: 700px !important;
+      top: 60px !important;
+      bottom: 80px !important;
+      height: auto !important;
+      max-height: calc(100vh - 140px) !important;
     }
   }
 }
