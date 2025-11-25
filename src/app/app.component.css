@@ -3,12 +3,17 @@
   color: #D392C3;
 }
 
+.navbar.fixed-top {
+  z-index: 1030;
+}
+
 @media (max-width: 991px) {
   .navbar-collapse {
     background-color: rgba(0, 0, 0, 0.9);
     padding: 20px;
     border-radius: 8px;
     margin-top: 10px;
+    z-index: 1040;
   }
 
   .navbar-nav {

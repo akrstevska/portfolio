@@ -3,7 +3,7 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  z-index: 1000;
+  z-index: 1050;
 }
 
 /* Chat Button (Floating) */
@@ -132,6 +132,7 @@
   overflow: hidden; /* ensure no container scrollbars */
   background: #121212;
   border-radius: 0 0 16px 16px;
+  min-height: 400px;
 }
 
 .chat-container iframe {
@@ -142,15 +143,20 @@
   height: 100%;
   border: none;
   border-radius: 0 0 14px 14px;
-  overflow: hidden;
+  overflow-y: auto;
+  /* Prevent iframe from causing layout issues on mobile */
+  -webkit-overflow-scrolling: touch;
+  /* Force iframe to render on mobile */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .chat-window {
     width: calc(100vw - 40px);
-    height: calc(100vh - 120px);
-    max-height: 85vh;
+    height: 70vh;
+    max-height: 600px;
     right: 20px;
   }
 }
@@ -168,10 +174,45 @@
 
   .chat-window {
     width: calc(100vw - 30px);
-    height: calc(100vh - 120px);
-    max-height: 85vh;
-    bottom: 70px;
+    height: calc(100vh - 100px);
+    max-height: 700px;
+    bottom: 80px;
     right: 15px;
+    left: 15px;
+    margin: 0 auto;
+  }
+  
+  .chat-header {
+    padding: 15px;
+    flex-shrink: 0;
+  }
+  
+  .chat-header-content h3 {
+    font-size: 16px;
+  }
+  
+  .chat-header-content p {
+    font-size: 12px;
+  }
+  
+  .chat-container {
+    flex: 1;
+    min-height: 400px;
+    max-height: calc(100vh - 200px);
+  }
+  
+  .chat-container iframe {
+    min-height: 400px;
+  }
+}
+
+/* iOS specific fixes */
+@supports (-webkit-touch-callout: none) {
+  @media (max-width: 576px) {
+    .chat-window {
+      height: calc(100vh - 100px) !important;
+      max-height: 700px !important;
+    }
   }
 }
 
