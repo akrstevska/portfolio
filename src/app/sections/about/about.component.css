@@ -3,16 +3,21 @@ h1{
 }
 #contact-btn{
   font-family: 'Outfit', sans-serif!important;
-
+  position: relative;
+  z-index: 1;
 }
 #links-container{
   height: 106px;
   background: #1B1B1B;
   border-radius: 16px;
   font-size: 60px;
+  position: relative;
+  z-index: 1;
 }
 #links-container a{
   color: #FAFAFA;
+  position: relative;
+  z-index: 1;
 }
 .profile-img {
   width: 100%;
